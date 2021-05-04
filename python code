@@ -1,0 +1,43 @@
+from tkinter import *
+root=Tk()
+root.title("Heat Tracing Calculator")
+
+LFL= Label(root, text="Linear feet of pipe")
+NINL= Label(root, text="Ninety count")
+TEEL= Label(root, text="Tee count")
+VEEL= Label(root, text="Valve count")
+PPFTL= Label(root, text="Price per foot")
+
+
+LFL.grid(row=0, column=1)
+NINL.grid(row=2, column=1)
+TEEL.grid(row=4, column=1)
+VEEL.grid(row=6, column=1)
+PPFTL.grid(row=0, column=3)
+
+
+
+LF= Entry(root, width=20,borderwidth=10)
+NIN= Entry(root, width=20,borderwidth=10)
+TEE= Entry(root, width=20,borderwidth=10)
+VEE= Entry(root, width=20,borderwidth=10)
+PPFT= Entry(root, width=10,borderwidth=10)
+cost= Entry(root,width=20,borderwidth=10)
+
+
+
+LF.grid(row=1,column=1, columnspan=1)
+NIN.grid(row=3,column=1, columnspan=1)
+TEE.grid(row=5,column=1, columnspan=1)
+VEE.grid(row=7,column=1, columnspan=1)
+PPFT.grid(row=1,column=3, columnspan=1)
+cost.grid(row=7,column=4)
+
+
+def calculate_1():
+    answer= PPFT.get()
+    cost.insert(0,str(PPFT))
+
+calculate_1=Button(root,text="calculate",padx=15,pady=15,bg="orange",fg="white",command=calculate_1)
+calculate_1.grid(row=6, column=4)
+
